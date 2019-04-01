@@ -60,3 +60,8 @@ $(call wlan-set-path-variant,wlan)
 $(call bt-vendor-set-path-variant,bt)
 
 endif
+
+# Enable color metadata for modern UM targets
+    ifneq ($(filter msm8996 msm8998 sdm660,$(TARGET_BOARD_PLATFORM)),)
+        TARGET_USES_COLOR_METADATA := true
+    endif
